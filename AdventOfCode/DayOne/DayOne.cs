@@ -10,14 +10,43 @@ namespace AdventOfCode.DayOne
     {
         public async Task Process()
         {
-            Console.WriteLine(await CountWindows("DayOne/input.txt", 3));
+            var data = await ReadAndParse("DayOne/Data/input.txt");
+            Console.WriteLine(CountWindows(data, 3));
         }
 
-        public async Task<int> CountWindows(string filename, int windowSize)
+        public int CountWindowsLinear(IList<int> data, int windowSize)
         {
-            var input = await ReadAndParse(filename);
+            int index = 0;
+            int sum = 0;
+            int increaseCount = 0;
 
-            var windows = GetWindows(input, windowSize);
+            var valuesQueue = new Queue<int>();
+
+            for (int i = 0; i < windowSize; i++)
+            {
+                valuesQueue.Enqueue(data[index++]);
+            }
+
+            sum = valuesQueue.Sum();
+
+            while (index < data.Count())
+            {
+                int nextValue = data[index++];
+                int nextSum = sum - valuesQueue.Dequeue() + nextValue;
+                valuesQueue.Enqueue(nextValue);
+
+                if (nextSum > sum)
+                {
+                    increaseCount++;
+                }
+            }
+
+            return increaseCount;
+        }
+
+        public int CountWindows(IList<int> data, int windowSize)
+        {
+            var windows = GetWindows(data, windowSize);
 
             int increases = 0;
 
@@ -52,15 +81,13 @@ namespace AdventOfCode.DayOne
         }
 
 
-        public async Task<int> CountIncreases(string filename)
+        public async Task<int> CountIncreases(IList<int> data)
         {
-            var input = await ReadAndParse(filename);
-
             int increases = 0;
             
-            for (int i=1; i<input.Count(); i++)
+            for (int i=1; i<data.Count(); i++)
             {
-                if (input.ElementAt(i) > input.ElementAt(i - 1))
+                if (data.ElementAt(i) > data.ElementAt(i - 1))
                 {
                     increases++;
                 }
