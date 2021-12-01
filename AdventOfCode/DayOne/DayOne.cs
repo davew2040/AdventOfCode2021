@@ -26,20 +26,20 @@ namespace AdventOfCode.DayOne
                 valuesQueue.Enqueue(data[index++]);
             }
 
-            int sum = valuesQueue.Sum();
+            int lastSum = valuesQueue.Sum();
 
             while (index < data.Count())
             {
                 int nextValue = data[index++];
-                int nextSum = sum + nextValue - valuesQueue.Dequeue();
+                int nextSum = lastSum + nextValue - valuesQueue.Dequeue();
                 valuesQueue.Enqueue(nextValue);
 
-                if (nextSum > sum)
+                if (nextSum > lastSum)
                 {
                     increaseCount++;
                 }
 
-                sum = nextSum;
+                lastSum = nextSum;
             }
 
             return increaseCount;
