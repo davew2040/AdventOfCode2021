@@ -11,13 +11,12 @@ namespace AdventOfCode.DayOne
         public async Task Process()
         {
             var data = await ReadAndParse("DayOne/Data/input.txt");
-            Console.WriteLine(CountWindows(data, 3));
+            Console.WriteLine(CountWindowsLinear(data, 3));
         }
 
-        public int CountWindowsLinear(IList<int> data, int windowSize)
+        private int CountWindowsLinear(IList<int> data, int windowSize)
         {
             int index = 0;
-            int sum = 0;
             int increaseCount = 0;
 
             var valuesQueue = new Queue<int>();
@@ -27,24 +26,26 @@ namespace AdventOfCode.DayOne
                 valuesQueue.Enqueue(data[index++]);
             }
 
-            sum = valuesQueue.Sum();
+            int sum = valuesQueue.Sum();
 
             while (index < data.Count())
             {
                 int nextValue = data[index++];
-                int nextSum = sum - valuesQueue.Dequeue() + nextValue;
+                int nextSum = sum + nextValue - valuesQueue.Dequeue();
                 valuesQueue.Enqueue(nextValue);
 
                 if (nextSum > sum)
                 {
                     increaseCount++;
                 }
+
+                sum = nextSum;
             }
 
             return increaseCount;
         }
 
-        public int CountWindows(IList<int> data, int windowSize)
+        private int CountWindows(IList<int> data, int windowSize)
         {
             var windows = GetWindows(data, windowSize);
 
@@ -61,7 +62,7 @@ namespace AdventOfCode.DayOne
             return increases;
         }
 
-        public IList<IEnumerable<int>> GetWindows(IList<int> measurements, int windowSize)
+        private IList<IEnumerable<int>> GetWindows(IList<int> measurements, int windowSize)
         {
             var windows = new List<IEnumerable<int>>(); 
 
@@ -79,9 +80,7 @@ namespace AdventOfCode.DayOne
 
             return windows;
         }
-
-
-        public async Task<int> CountIncreases(IList<int> data)
+        private int CountIncreases(IList<int> data)
         {
             int increases = 0;
             
