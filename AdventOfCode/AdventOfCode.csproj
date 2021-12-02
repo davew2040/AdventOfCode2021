@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -10,6 +10,8 @@
   <ItemGroup>
     <None Remove="DayOne\input.txt" />
     <None Remove="DayOne\sample.txt" />
+    <None Remove="DayTwo\Data\problem_3_input.txt" />
+    <None Remove="DayTwo\Data\sample.txt" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +19,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DayOne\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DayTwo\Data\problem_3_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DayTwo\Data\sample.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
