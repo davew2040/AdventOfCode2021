@@ -55,22 +55,23 @@ namespace AdventOfCode.DayTwo
             try
             {
                 commands = await ReadAndParse("DayTwo/Data/problem_3_input.txt");
-                var position = new Position(0, 0, 0);
-
-                foreach (var command in commands)
-                {
-                    position = position.ApplyCommandWithAim(command);
-                }
-
-                Console.WriteLine($"Final position: {position}");
-
-                Console.WriteLine($"Multiplication = {position.HorizontalPosition * position.Depth}");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("An error occurred while reading input!");
                 Console.WriteLine(ex.Message);
+                return;
             }
+
+            var position = new Position(0, 0, 0);
+
+            foreach (var command in commands)
+            {
+                position = position.ApplyCommandWithAim(command);
+            }
+
+            Console.WriteLine($"Final position: {position}");
+            Console.WriteLine($"Multiplication = {position.HorizontalPosition * position.Depth}");
         }
 
         private async Task<IEnumerable<MoveCommand>> ReadAndParse(string filename)
