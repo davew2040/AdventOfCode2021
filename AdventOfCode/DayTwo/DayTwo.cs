@@ -46,7 +46,7 @@ namespace AdventOfCode.DayTwo
             );
     }
 
-    internal class DayTwo
+    internal class DayTwo : DailyChallenge
     {
         public async Task Process()
         {

@@ -10,6 +10,8 @@
   <ItemGroup>
     <None Remove="DayOne\input.txt" />
     <None Remove="DayOne\sample.txt" />
+    <None Remove="DayThree\Data\problem_5_input.txt" />
+    <None Remove="DayThree\Data\sample.txt" />
     <None Remove="DayTwo\Data\problem_3_input.txt" />
     <None Remove="DayTwo\Data\sample.txt" />
   </ItemGroup>
@@ -19,6 +21,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DayOne\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DayThree\Data\problem_5_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="DayThree\Data\sample.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="DayTwo\Data\problem_3_input.txt">
