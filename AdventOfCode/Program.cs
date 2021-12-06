@@ -2,12 +2,13 @@
 using AdventOfCode.DayFive;
 using AdventOfCode.DayFour;
 using AdventOfCode.DayOne;
+using AdventOfCode.DaySix;
 using AdventOfCode.DayThree;
 using AdventOfCode.DayTwo;
 
 try
 {
-    var day = new DayFive();
+    var day = new DaySix();
 
     await day.Process();
 
