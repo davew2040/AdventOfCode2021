@@ -8,7 +8,7 @@ using AdventOfCode.DayTwo;
 
 try
 {
-    var day = new DaySix();
+    var day = new Day6();
 
     await day.Process();
 

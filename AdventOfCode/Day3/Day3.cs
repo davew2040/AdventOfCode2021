@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.DayThree
 {
-    internal class DayThree : DailyChallenge
+    internal class Day3 : DailyChallenge
     { 
         public async Task Process()
         {

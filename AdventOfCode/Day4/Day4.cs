@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.DayFour
 {
-    internal class DayFour : DailyChallenge
+    internal class Day4 : DailyChallenge
     {
         public record WinningBoard(BingoBoard Board, int WinningNumber);
 

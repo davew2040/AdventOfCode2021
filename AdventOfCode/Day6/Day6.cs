@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode.DaySix
 {
-    internal class DaySix : DailyChallenge
+    internal class Day6 : DailyChallenge
     {
         public const int DefaultTimerCycle = 6;
         public const int SpawnedFishTimerGap = 2;
 
         public async Task Process()
         {
-            var fish = await ReadAndParse("DaySix/Data/day_6_input.txt");
+            var fish = await ReadAndParse("Day6/Data/day_6_input.txt");
 
             var fishAges = InitializeFishAges(fish);
 
@@ -45,7 +45,7 @@ namespace AdventOfCode.DaySix
             return fishAges;
         }
 
-        private Dictionary<int, long> GetNextIterationByCount(Dictionary<int, long> initialFishAges)
+        private Dictionary<int, long> GetNextIteration(Dictionary<int, long> initialFishAges)
         {
             var nextFishAges = new Dictionary<int, long>();
 
@@ -78,47 +78,13 @@ namespace AdventOfCode.DaySix
             dictionary[key] = dictionary[key] + value;
         }
 
-        private IEnumerable<LanternFish> GetNextIteration(IEnumerable<LanternFish> initialFishes)
-        {
-            var nextFishPool = new List<LanternFish>();
-
-            foreach (var initialFish in initialFishes)
-            {
-                var newTimer = initialFish.Timer - 1;
-
-                if (newTimer < 0)
-                {
-                    nextFishPool.Add(new LanternFish(DefaultTimerCycle + SpawnedFishTimerGap));
-                    nextFishPool.Add(new LanternFish(DefaultTimerCycle));
-                }
-                else
-                {
-                    nextFishPool.Add(new LanternFish(newTimer));
-                }
-            }
-
-            return nextFishPool;
-        }
-
         private Dictionary<int, long> GetFishAgesByDayCount(int dayCount, Dictionary<int, long> initialFishes)
         {
             Dictionary<int, long> fish = initialFishes;
 
             for (int d = 1; d <= dayCount; d++)
             {
-                fish = GetNextIterationByCount(fish);
-            }
-
-            return fish;
-        }
-
-        private IEnumerable<LanternFish> GetFishStateAfterDayCount(int dayCount, IEnumerable<LanternFish> initialFishes)
-        {
-            IEnumerable<LanternFish> fish = initialFishes;
-
-            for (int d=1; d<=dayCount; d++)
-            {
-                fish = GetNextIteration(fish).ToList();
+                fish = GetNextIteration(fish);
             }
 
             return fish;

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace AdventOfCode.DayFive
 { 
 
-    internal class DayFive : DailyChallenge
+    internal class Day5 : DailyChallenge
     {
         public async Task Process()
         {
