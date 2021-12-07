@@ -11,8 +11,12 @@ namespace AdventOfCode.Day7
         public async Task Process()
         {
             var positions = await ReadAndParse("Day7/Data/day_7_input.txt");
+            int fuel = 0;
 
-            var fuel = FindLeastFuelSummation(positions);
+            using (var timer = new Lib.Timer(elapsed => Console.WriteLine(elapsed)))
+            {
+                fuel = FindLeastFuelSummation(positions);
+            }
 
             Console.WriteLine($"Minimum fuel = {fuel}");
         }
