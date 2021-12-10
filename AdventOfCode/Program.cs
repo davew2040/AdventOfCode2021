@@ -1,5 +1,7 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using AdventOfCode.Day7;
+using AdventOfCode.Day8;
+using AdventOfCode.Day9;
 using AdventOfCode.DayFive;
 using AdventOfCode.DayFour;
 using AdventOfCode.DayOne;
@@ -9,7 +11,7 @@ using AdventOfCode.DayTwo;
 
 try
 {
-    var day = new Day7();
+    var day = new Day9();
 
     await day.Process();
 
