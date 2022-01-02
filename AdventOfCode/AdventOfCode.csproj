@@ -26,6 +26,18 @@
     <None Remove="Day17\Data\sample.txt" />
     <None Remove="Day18\Data\puzzle_input.txt" />
     <None Remove="Day18\Data\sample.txt" />
+    <None Remove="Day19\Data\problem_input.txt" />
+    <None Remove="Day19\Data\sample.txt" />
+    <None Remove="Day20\Data\problem_input.txt" />
+    <None Remove="Day20\Data\sample.txt" />
+    <None Remove="Day21\Data\puzzle_input.txt" />
+    <None Remove="Day23\Data\problem_input.txt" />
+    <None Remove="Day23\Data\sample.txt" />
+    <None Remove="Day23\Data\sample_small.txt" />
+    <None Remove="Day24\Data\problem_input.txt" />
+    <None Remove="Day24\Data\sample.txt" />
+    <None Remove="Day25\Data\problem_input.txt" />
+    <None Remove="Day25\Data\sample.txt" />
     <None Remove="Day5\Data\day_5_input.txt" />
     <None Remove="Day5\sample.txt" />
     <None Remove="Day4\Data\day_4_input.txt" />
@@ -100,6 +112,42 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Day18\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day19\Data\problem_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day19\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day20\Data\problem_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day20\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day21\Data\puzzle_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day23\Data\problem_input.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day23\Data\sample_small.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day23\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day24\Data\problem_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day24\Data\sample.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day25\Data\problem_input.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Day25\Data\sample.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Day5\Data\day_5_input.txt">
