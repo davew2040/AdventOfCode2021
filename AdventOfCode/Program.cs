@@ -11,6 +11,7 @@ using AdventOfCode.Day18;
 using AdventOfCode.Day19;
 using AdventOfCode.Day20;
 using AdventOfCode.Day21;
+using AdventOfCode.Day22;
 using AdventOfCode.Day23;
 using AdventOfCode.Day24;
 using AdventOfCode.Day25;
@@ -26,7 +27,7 @@ using AdventOfCode.DayTwo;
 
 try
 {
-    var day = new Day21();
+    var day = new Day22();
 
     await day.Process();
 
