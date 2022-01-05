@@ -27,7 +27,7 @@ using AdventOfCode.DayTwo;
 
 try
 {
-    var day = new Day22();
+    var day = new Day19();
 
     await day.Process();
 
